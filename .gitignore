@@ -1,0 +1,22 @@
+.DS_Store
+node_modules
+/dist
+/storybook-static
+
+# local config env files
+.env.local
+.env.*.local
+
+# Log Files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor specific files and folders
+.idea
+.vscode
+*.suo
+*.ntvs*
+*njsproj*
+*.sln
+*.sw*
