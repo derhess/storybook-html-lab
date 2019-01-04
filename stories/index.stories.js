@@ -2,6 +2,7 @@ import { document } from "global";
 import { storiesOf } from "@storybook/html";
 import { action } from "@storybook/addon-actions";
 import { withLinks } from "@storybook/addon-links";
+import { withNotes } from "@storybook/addon-notes";
 
 import "./welcome.css";
 import welcome from "./welcome.html";
@@ -40,11 +41,17 @@ storiesOf("Getting Started", module)
 /****************************
  * UI Component or HTML Templates in Atomic Design Structure
  */
-
-storiesOf("Components|Atoms/Buttons", module).add(
-  "Overview",
-  () => "<h1>hello world</h1>"
-);
+import Button from "./../src/components/00-atoms/button/button.html";
+import ButtonDocs from "./../src/components/00-atoms/button/button.md";
+storiesOf("Components|Atoms/Buttons", module)
+  .addDecorator(withNotes)
+  .add("Overview", () => "<h1>hello world</h1>", {
+    notes: "My notes on some bold text"
+  })
+  .add("Button", () => Button, {
+    notes: { markdown: ButtonDocs }
+  })
+  .add("Markdown Docs", () => ButtonDocs);
 
 storiesOf("Components|Molecules/ToggleButtonBar", module).add(
   "Overview",
