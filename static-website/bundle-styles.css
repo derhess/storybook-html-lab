@@ -1,0 +1,144 @@
+/* Variables */
+body,
+html {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  color: #252227; }
+
+div.wrapper {
+  display: grid;
+  width: 100vw;
+  grid-template-areas: "content" "visual";
+  grid-template-rows: 61.8034% 38.1966%;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    div.wrapper {
+      grid-template-areas: "content visual";
+      grid-template-columns: 61.8034% 38.1966%;
+      grid-template-rows: 1fr 0fr;
+      height: 100vh; } }
+  @media screen and (min-width: 1024px) {
+    div.wrapper {
+      grid-template-areas: "content visual";
+      grid-template-columns: 61.8034% 38.1966%;
+      grid-template-rows: 1fr 0fr;
+      height: 100vh;
+      text-align: left; } }
+
+a {
+  text-decoration: none;
+  color: black; }
+  a:hover {
+    color: #9c2532;
+    cursor: pointer; }
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-areas: "header" "sign-up" "social";
+  grid-template-rows: 1fr 2fr 1fr;
+  padding: 2em; }
+
+.visual {
+  grid-area: visual;
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 50%; }
+  @media screen and (min-width: 768px) {
+    .visual {
+      background-image: url(static/scott-webb-207709-unsplash.jpg); } }
+
+header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column; }
+  header h1 {
+    display: inline-block;
+    font-family: "IBM Plex Sans Condensed", sans-serif; }
+  header nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center; }
+    @media screen and (min-width: 1024px) {
+      header nav ul {
+        justify-content: flex-start; } }
+    header nav ul li {
+      padding: 0 1em;
+      border-left: 1px solid #eee; }
+      header nav ul li:first-child {
+        padding-left: 0;
+        border: none; }
+      header nav ul li:last-child {
+        padding-right: 0; }
+
+.newsletter {
+  grid-area: sign-up; }
+  .newsletter h2 {
+    font-family: "IBM Plex Sans Condensed", sans-serif; }
+  .newsletter .form-wrapper {
+    display: flex;
+    flex-direction: column; }
+    @media screen and (min-width: 1024px) {
+      .newsletter .form-wrapper {
+        flex-direction: row; } }
+    .newsletter .form-wrapper input {
+      margin: 1em 0;
+      flex-grow: 1;
+      height: 2em;
+      border-top: 1px solid #eee;
+      padding: 1em;
+      border-left: 3px solid #9c2532;
+      box-shadow: 2px 3px 12px #eee;
+      font-size: 16px; }
+    .newsletter .form-wrapper button {
+      margin: 1em 0;
+      background-color: #9c2532;
+      width: 100%;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      border: 1px solid #9c2532;
+      height: 2em;
+      padding: 2em;
+      line-height: 0em;
+      box-shadow: 2px 3px 12px #eee; }
+      .newsletter .form-wrapper button:hover {
+        background-color: #c52f3f;
+        border: 1px solid #c52f3f; }
+      @media screen and (min-width: 1024px) {
+        .newsletter .form-wrapper button {
+          margin-left: 24px;
+          width: auto; } }
+
+.social ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center; }
+  @media screen and (min-width: 1024px) {
+    .social ul {
+      justify-content: flex-start; } }
+  .social ul li {
+    padding: 0 1em;
+    font-size: 1.5em; }
+    .social ul li:first-child {
+      padding-left: 0; }
+    .social ul li:last-child {
+      padding-right: 0; }
+  .social ul .fa-instagram {
+    color: #000; }
+  .social ul .fa-pinterest {
+    color: #bd081c; }
+  .social ul .fa-twitter {
+    color: #1da1f2; }
+
