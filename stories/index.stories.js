@@ -68,11 +68,16 @@ storiesOf("Components|Templates/Layouts", module).add(
   () => "<h1>Mostly Layout Specfic Container Components for Page Layouts</h1>"
 );
 
-storiesOf("Components|Pages", module).add(
-  "Overview",
-  () =>
-    "<h1>This section collects commonly-used page templates that are useful as a starting point for similar use cases.</h1>"
-);
+import StartPage from "./../src/index.handlebars";
+storiesOf("Components|Pages", module)
+  .add(
+    "Overview",
+    () =>
+      "<h1>This section collects commonly-used page templates that are useful as a starting point for similar use cases.</h1>"
+  )
+  .add("Home Landing Page", () => {
+    return StartPage({});
+  });
 
 /***
  * Styleguide Contribution und Help Section
