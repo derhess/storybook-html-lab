@@ -3,6 +3,8 @@ import { storiesOf } from "@storybook/html";
 import { action } from "@storybook/addon-actions";
 import { withLinks } from "@storybook/addon-links";
 import { withNotes } from "@storybook/addon-notes";
+import { text, select, withKnobs } from "@storybook/addon-knobs";
+import { checkA11y } from "@storybook/addon-a11y";
 
 import "./welcome.css";
 import welcome from "./welcome.html";
@@ -52,6 +54,48 @@ storiesOf("Components|Atoms/Buttons", module)
     notes: { markdown: ButtonDocs }
   })
   .add("Markdown Docs", () => ButtonDocs);
+
+import IconLink from "./../src/components/01-atoms/links/icon-link.handlebars";
+import IconLinkContextObject from "./../src/components/01-atoms/links/icon-link.json";
+import TextLink from "./../src/components/01-atoms/links/text-link.handlebars";
+import TextLinkContextObject from "./../src/components/01-atoms/links/text-link.json";
+storiesOf("Components|Atoms/Links", module)
+  .addDecorator(withNotes)
+  .addDecorator(withKnobs)
+  .add(
+    "Overview",
+    () => {
+      return `<h1>Atomic Link Elements</h1>
+      <h2>Text Link</h2>
+      ${TextLink(TextLinkContextObject)}
+      <h2>Icon Link</h2>
+      ${IconLink(IconLinkContextObject)}`;
+    },
+    {
+      notes: "My notes on some bold text"
+    }
+  )
+  .add(
+    "Text Links",
+    () => {
+      const txt = text("Text", TextLinkContextObject.text);
+      const href = text("href", TextLinkContextObject.href);
+      return TextLink({ text: txt, href });
+    },
+    {
+      notes: { markdown: ButtonDocs }
+    }
+  )
+  .add("Icon Links", () => {
+    const smlist = {
+      instagram: "instagram",
+      twitter: "twitter",
+      pinterest: "pinterest"
+    };
+    const chosenSM = select("Social Media Icons", smlist, "instagram");
+    IconLinkContextObject.icon = chosenSM;
+    return IconLink(IconLinkContextObject);
+  });
 
 import NavigationBar from "./../src/components/02-molecules/navigation.handlebars";
 import SocialIconLinkBar from "./../src/components/02-molecules/social-icon-link-bar.handlebars";
