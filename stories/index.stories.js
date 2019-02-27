@@ -41,8 +41,8 @@ storiesOf("Getting Started", module)
 /****************************
  * UI Component or HTML Templates in Atomic Design Structure
  */
-import Button from "./../src/components/00-atoms/button/button.html";
-import ButtonDocs from "./../src/components/00-atoms/button/button.md";
+import Button from "./../src/components/01-atoms/button/button.html";
+import ButtonDocs from "./../src/components/01-atoms/button/button.md";
 storiesOf("Components|Atoms/Buttons", module)
   .addDecorator(withNotes)
   .add("Overview", () => "<h1>hello world</h1>", {
@@ -53,19 +53,32 @@ storiesOf("Components|Atoms/Buttons", module)
   })
   .add("Markdown Docs", () => ButtonDocs);
 
-storiesOf("Components|Molecules/ToggleButtonBar", module).add(
-  "Overview",
-  () => "<h1>hello world</h1>"
-);
+import NavigationBar from "./../src/components/02-molecules/navigation.handlebars";
+import SocialIconLinkBar from "./../src/components/02-molecules/social-icon-link-bar.handlebars";
+storiesOf("Components|Molecules/Navigations", module)
+  .add("Overview", () => "<h1>hello world</h1>")
+  .add("Navigation Bar", () => {
+    return NavigationBar();
+  })
+  .add("Social Media Icon Link Bar", () => {
+    return SocialIconLinkBar();
+  });
 
 import Header from "./../src/components/03-organisms/header.handlebars";
 import Newsletter from "./../src/components/03-organisms/newsletter.handlebars";
 import SocialMedia from "./../src/components/03-organisms/social.handlebars";
-storiesOf("Components|Organisms/HeaderNavigation", module)
+storiesOf("Components|Organisms", module)
   .add(
     "Overview",
     () =>
-      "<h1>Navigation and Container Components (e.g. Higher Order Comps)</h1>"
+      `<h1>Navigation and Container Components (e.g. Higher Order Comps)</h1>
+      <h2>Header Navigation</h2>
+      ${Header()}
+      <h2>Newsletter Registration</h2>
+      ${Newsletter()}
+      <h2>Social Media Links</h2>
+      ${SocialMedia()}
+      `
   )
   .add("Header", () => {
     return Header();
