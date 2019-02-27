@@ -56,7 +56,14 @@ storiesOf("Components|Atoms/Buttons", module)
 import NavigationBar from "./../src/components/02-molecules/navigation.handlebars";
 import SocialIconLinkBar from "./../src/components/02-molecules/social-icon-link-bar.handlebars";
 storiesOf("Components|Molecules/Navigations", module)
-  .add("Overview", () => "<h1>hello world</h1>")
+  .add("Overview", () => {
+    return `<h1>Molecule Elements rock!</h1>
+    <h2>Navigation Bar (mostly for site header)</h2>
+    ${NavigationBar()}
+    <h2>Social Media Link Bar with Icons</h2>
+    ${SocialIconLinkBar()}
+    `;
+  })
   .add("Navigation Bar", () => {
     return NavigationBar();
   })

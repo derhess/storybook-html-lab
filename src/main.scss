@@ -82,30 +82,29 @@ header {
     display: inline-block;
     font-family: $heading-font;
   }
-  nav {
-    ul {
-      display: flex;
-      flex-direction: row;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      justify-content: center;
-      @media screen and (min-width: $desktop) {
-        justify-content: flex-start;
-      }
-      li {
-        padding: 0 1em;
-        border-left: 1px solid $gray;
-        &:first-child {
-          padding-left: 0;
-          border: none;
-        }
+}
+.navigation__ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  @media screen and (min-width: $desktop) {
+    justify-content: flex-start;
+  }
+}
 
-        &:last-child {
-          padding-right: 0;
-        }
-      }
-    }
+.navigation__li {
+  padding: 0 1em;
+  border-left: 1px solid $gray;
+  &:first-child {
+    padding-left: 0;
+    border: none;
+  }
+
+  &:last-child {
+    padding-right: 0;
   }
 }
 
@@ -156,39 +155,38 @@ header {
   }
 }
 
-.social {
-  ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    @media screen and (min-width: $desktop) {
-      justify-content: flex-start;
-    }
-    li {
-      padding: 0 1em;
-      font-size: 1.5em;
-      &:first-child {
-        padding-left: 0;
-      }
-
-      &:last-child {
-        padding-right: 0;
-      }
-    }
-
-    .fa-instagram {
-      color: $instagram;
-    }
-
-    .fa-pinterest {
-      color: $pinterest;
-    }
-
-    .fa-twitter {
-      color: $twitter;
-    }
+.social__ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  @media screen and (min-width: $desktop) {
+    justify-content: flex-start;
   }
+}
+
+.social__li {
+  padding: 0 1em;
+  font-size: 1.5em;
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.fa-instagram {
+  color: $instagram;
+}
+
+.fa-pinterest {
+  color: $pinterest;
+}
+
+.fa-twitter {
+  color: $twitter;
 }
