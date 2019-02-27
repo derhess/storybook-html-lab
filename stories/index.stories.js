@@ -58,17 +58,31 @@ storiesOf("Components|Molecules/ToggleButtonBar", module).add(
   () => "<h1>hello world</h1>"
 );
 
-storiesOf("Components|Organisms/HeaderNavigation", module).add(
-  "Overview",
-  () => "<h1>Navigation and Container Components (e.g. Higher Order Comps)</h1>"
-);
+import Header from "./../src/components/03-organisms/header.handlebars";
+import Newsletter from "./../src/components/03-organisms/newsletter.handlebars";
+import SocialMedia from "./../src/components/03-organisms/social.handlebars";
+storiesOf("Components|Organisms/HeaderNavigation", module)
+  .add(
+    "Overview",
+    () =>
+      "<h1>Navigation and Container Components (e.g. Higher Order Comps)</h1>"
+  )
+  .add("Header", () => {
+    return Header();
+  })
+  .add("Newsletter", () => {
+    return Newsletter();
+  })
+  .add("Social Media", () => {
+    return SocialMedia();
+  });
 
 storiesOf("Components|Templates/Layouts", module).add(
   "Overview",
   () => "<h1>Mostly Layout Specfic Container Components for Page Layouts</h1>"
 );
 
-import StartPage from "./../src/index.handlebars";
+import StartPage from "./../src/components/05-pages/index.handlebars";
 storiesOf("Components|Pages", module)
   .add(
     "Overview",
