@@ -6,6 +6,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{htmlWebpackPlugin.options.pageData.meta.description}}">
+    <meta name="keywords" content="{{htmlWebpackPlugin.options.pageData.meta.keywords}}">
     <title>{{htmlWebpackPlugin.options.title}}</title>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,9 +17,9 @@
 <body>
     <div class="wrapper">
         <div class="content">
-            {{> ../03-organisms/header title=htmlWebpackPlugin.options.title}}
-            {{> ../03-organisms/newsletter}}
-            {{> ../03-organisms/social}}
+            {{> ../03-organisms/header htmlWebpackPlugin.options.pageData.content.header}}
+            {{> ../03-organisms/newsletter htmlWebpackPlugin.options.pageData.content.newsletter}}
+            {{> ../03-organisms/social htmlWebpackPlugin.options.pageData.content.socialmedia}}
         </div>
         <div class="visual">
 

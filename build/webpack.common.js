@@ -6,6 +6,8 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 
+const indexPageContent = require("./../src/components/05-pages/indexMockData.json");
+
 module.exports = {
   entry: {
     bundle: "./src/app.js"
@@ -100,6 +102,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "My awesome service",
       template: "./src/components/05-pages/index.handlebars",
+      pageData: indexPageContent,
       minify: false && {
         html5: true,
         collapseWhitespace: true,

@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "description": "Atomic Design - Starter Tutorial for HTML and Storybook",
+    "keywords": "HTML, Storybook, Handlebars, Webpack, Landingpage, Tutorial"
+  },
+  "content": {
+    "header": {
+      "title": "Awesome Service",
+      "links": [
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/",
+          "text": "About"
+        },
+        {
+          "href": "/",
+          "text": "Contact"
+        }
+      ]
+    },
+    "newsletter": {
+      "title": "Sign-up for the newsletter",
+      "text": "Be one of the first users who joins our awesome service. By registering to the newsletter we'll send you a message as soon as we launch.",
+      "form": {
+        "inputtext": {
+          "placeholder": "your@email.com",
+          "title": "Newsletter Sign-Up"
+        },
+        "button": {
+          "text": "Sign-Up"
+        }
+      }
+    },
+
+    "socialmedia": {
+      "title": "Follow us",
+      "profiles": [
+        {
+          "href": "https://instragram",
+          "icon": "instagram"
+        },
+        {
+          "href": "https://twitter.com",
+          "icon": "twitter"
+        },
+        {
+          "href": "https://pinterest.com",
+          "icon": "pinterest"
+        }
+      ]
+    }
+  }
+}
