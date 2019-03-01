@@ -1,17 +1,10 @@
 <ul class="social__ul">
+    {{!-- Example comment with and debug logging command below --}}
+    {{log this }}
+
+    {{#each this}}
     <li class="social__li">
-        <a href="">
-            <i class="fab fa-instagram"></i>
-        </a>
+        {{> ../01-atoms/links/icon-link this}}
     </li>
-    <li class="social__li">
-        <a href="">
-            <i class="fab fa-twitter"></i>
-        </a>
-    </li>
-    <li class="social__li">
-        <a href="">
-            <i class="fab fa-pinterest"></i>
-        </a>
-    </li>
+    {{/each}}
 </ul>

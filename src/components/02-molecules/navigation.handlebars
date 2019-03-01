@@ -1,13 +1,7 @@
 <nav class="navigation">
     <ul class="navigation__ul">
-        <li class="navigation__li">
-            <a href="/">Home</a>
-        </li>
-        <li class="navigation__li">
-            <a href="/">About</a>
-        </li>
-        <li class="navigation__li">
-            <a href="/">Contact</a>
-        </li>
+        {{#each links}}
+        {{> ../01-atoms/links/text-link this}}
+        {{/each}}
     </ul>
 </nav>

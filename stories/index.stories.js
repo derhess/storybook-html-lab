@@ -99,24 +99,30 @@ storiesOf("Components|Atoms/Links", module)
     return IconLink(IconLinkContextObject);
   });
 
+/****************************
+ * Molecule Templates
+ * */
 import NavigationBar from "./../src/components/02-molecules/navigation.handlebars";
 import SocialIconLinkBar from "./../src/components/02-molecules/social-icon-link-bar.handlebars";
 storiesOf("Components|Molecules/Navigations", module)
   .add("Overview", () => {
     return `<h1>Molecule Elements rock!</h1>
     <h2>Navigation Bar (mostly for site header)</h2>
-    ${NavigationBar()}
+    ${NavigationBar(pageContextObject.content.header.navigation)}
     <h2>Social Media Link Bar with Icons</h2>
-    ${SocialIconLinkBar()}
+    ${SocialIconLinkBar(pageContextObject.content.profiles)}
     `;
   })
   .add("Navigation Bar", () => {
-    return NavigationBar();
+    return NavigationBar(pageContextObject.content.header.navigation);
   })
   .add("Social Media Icon Link Bar", () => {
-    return SocialIconLinkBar();
+    return SocialIconLinkBar(pageContextObject.content.socialmedia.profiles);
   });
 
+/****************************
+ * Organism Templates
+ * */
 import Header from "./../src/components/03-organisms/header.handlebars";
 import Newsletter from "./../src/components/03-organisms/newsletter.handlebars";
 import SocialMedia from "./../src/components/03-organisms/social.handlebars";
@@ -126,11 +132,11 @@ storiesOf("Components|Organisms", module)
     () =>
       `<h1>Navigation and Container Components (e.g. Higher Order Comps)</h1>
       <h2>Header Navigation</h2>
-      ${Header()}
+      ${Header(pageContextObject.content.header)}
       <h2>Newsletter Registration</h2>
-      ${Newsletter()}
+      ${Newsletter(pageContextObject.content.newsletter)}
       <h2>Social Media Links</h2>
-      ${SocialMedia()}
+      ${SocialMedia(pageContextObject.content.socialmedia)}
       `
   )
   .add("Header", () => {
@@ -143,11 +149,17 @@ storiesOf("Components|Organisms", module)
     return SocialMedia(pageContextObject.content.socialmedia);
   });
 
+/****************************
+ * Page Layout Templates (Site with Sidebar Layout or other)
+ * */
 storiesOf("Components|Templates/Layouts", module).add(
   "Overview",
   () => "<h1>Mostly Layout Specfic Container Components for Page Layouts</h1>"
 );
 
+/****************************
+ * Page Templates with real content
+ * */
 import StartPage from "./../src/components/05-pages/index.handlebars";
 storiesOf("Components|Pages", module)
   .add(
@@ -156,7 +168,10 @@ storiesOf("Components|Pages", module)
       "<h1>This section collects commonly-used page templates that are useful as a starting point for similar use cases.</h1>"
   )
   .add("Home Landing Page", () => {
-    return StartPage({});
+    let pseudoHtmlWebpackPluginData = {
+      htmlWebpackPlugin: { options: { pageData: pageContextObject } }
+    };
+    return StartPage(pseudoHtmlWebpackPluginData);
   });
 
 /***
