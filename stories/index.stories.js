@@ -9,6 +9,8 @@ import { checkA11y } from "@storybook/addon-a11y";
 import "./welcome.css";
 import welcome from "./welcome.html";
 
+import pageContextObject from "./../src/components/05-pages/indexMockData.json";
+
 storiesOf("Welcome", module)
   .addDecorator(withLinks)
   .add("Welcome", () => welcome);
@@ -132,13 +134,13 @@ storiesOf("Components|Organisms", module)
       `
   )
   .add("Header", () => {
-    return Header();
+    return Header(pageContextObject.content.header);
   })
   .add("Newsletter", () => {
-    return Newsletter();
+    return Newsletter(pageContextObject.content.newsletter);
   })
   .add("Social Media", () => {
-    return SocialMedia();
+    return SocialMedia(pageContextObject.content.socialmedia);
   });
 
 storiesOf("Components|Templates/Layouts", module).add(

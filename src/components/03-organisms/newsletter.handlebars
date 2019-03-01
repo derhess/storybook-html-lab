@@ -1,11 +1,11 @@
 <section class="newsletter">
-    <h2>Sign-up for the newsletter</h2>
-    <p>Be one of the first users who joins our awesome service. By registering to the newsletter we'll send you a message as soon as we launch.</p>
+    <h2>{{ title }}</h2>
+    <p>{{{ text }}}</p>
 
     <div class="form">
         <div class="form-wrapper">
-            <input type="text" placeholder="your@email.com" title="Newsletter Sign-Up">
-            <button type="submit">Sign-Up</button>
+            <input type="text" placeholder="{{form.inputtext.placeholder}}" title="{{form.inputtext.title}}">
+            <button type="submit">{{form.button.text}}</button>
         </div>
     </div>
 </section>

@@ -6,20 +6,22 @@
   "content": {
     "header": {
       "title": "Awesome Service",
-      "links": [
-        {
-          "href": "/",
-          "text": "Home"
-        },
-        {
-          "href": "/",
-          "text": "About"
-        },
-        {
-          "href": "/",
-          "text": "Contact"
-        }
-      ]
+      "navigation": {
+        "links": [
+          {
+            "href": "/",
+            "text": "Home"
+          },
+          {
+            "href": "/",
+            "text": "About"
+          },
+          {
+            "href": "/",
+            "text": "Contact"
+          }
+        ]
+      }
     },
     "newsletter": {
       "title": "Sign-up for the newsletter",
