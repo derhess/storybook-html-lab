@@ -11,6 +11,7 @@ import welcome from "./welcome.html";
 
 import pageContextObject from "./../src/components/05-pages/indexMockData.json";
 import AboutPageContextObject from "./../src/components/05-pages/aboutMockData.json";
+import ContactPageContextObject from "./../src/components/05-pages/contactMockData.json";
 
 storiesOf("Welcome", module)
   .addDecorator(withLinks)
@@ -163,6 +164,7 @@ storiesOf("Components|Templates/Layouts", module).add(
  * */
 import StartPage from "./../src/components/05-pages/index.handlebars";
 import AboutPage from "./../src/components/05-pages/about.handlebars";
+import ContactPage from "./../src/components/05-pages/contact.handlebars";
 storiesOf("Components|Pages", module)
   .add(
     "Overview",
@@ -180,6 +182,12 @@ storiesOf("Components|Pages", module)
       htmlWebpackPlugin: { options: { pageData: AboutPageContextObject } }
     };
     return AboutPage(pseudoHtmlWebpackPluginData);
+  })
+  .add("Contact Page", () => {
+    let pseudoHtmlWebpackPluginData = {
+      htmlWebpackPlugin: { options: { pageData: ContactPageContextObject } }
+    };
+    return ContactPage(pseudoHtmlWebpackPluginData);
   });
 
 /***

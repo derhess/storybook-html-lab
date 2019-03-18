@@ -12,6 +12,22 @@
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <style>
+        /*
+        Your critical CSS could be manually added here or automatically
+
+        More information here
+            - https://www.smashingmagazine.com/2015/08/understanding-critical-css/
+            - https://github.com/addyosmani/critical
+            - https://github.com/anthonygore/html-critical-webpack-plugin
+
+        */
+        .contact-form {
+            background-color: bisque;
+            padding: 2rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +35,7 @@
         <div class="content">
             {{> ../03-organisms/header htmlWebpackPlugin.options.pageData.content.header}}
 
-            <div style="background-color:bisque;padding:2rem;">
+            <div class="contact-form">
                 <h1>{{htmlWebpackPlugin.options.pageData.content.contact.title}}</h1>
                 <p>{{htmlWebpackPlugin.options.pageData.content.contact.form}}</p>
             </div>
