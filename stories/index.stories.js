@@ -10,6 +10,7 @@ import "./welcome.css";
 import welcome from "./welcome.html";
 
 import pageContextObject from "./../src/components/05-pages/indexMockData.json";
+import AboutPageContextObject from "./../src/components/05-pages/aboutMockData.json";
 
 storiesOf("Welcome", module)
   .addDecorator(withLinks)
@@ -161,6 +162,7 @@ storiesOf("Components|Templates/Layouts", module).add(
  * Page Templates with real content
  * */
 import StartPage from "./../src/components/05-pages/index.handlebars";
+import AboutPage from "./../src/components/05-pages/about.handlebars";
 storiesOf("Components|Pages", module)
   .add(
     "Overview",
@@ -172,6 +174,12 @@ storiesOf("Components|Pages", module)
       htmlWebpackPlugin: { options: { pageData: pageContextObject } }
     };
     return StartPage(pseudoHtmlWebpackPluginData);
+  })
+  .add("About Page", () => {
+    let pseudoHtmlWebpackPluginData = {
+      htmlWebpackPlugin: { options: { pageData: AboutPageContextObject } }
+    };
+    return AboutPage(pseudoHtmlWebpackPluginData);
   });
 
 /***
