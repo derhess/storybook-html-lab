@@ -23,10 +23,11 @@
         ]
       }
     },
-    "about": {
-      "title": "My About Page",
-      "text": "Hello this is the about me section"
+    "contact": {
+      "title": "Placeholder for Contact title",
+      "form": "Please add here your contact form"
     },
+
     "socialmedia": {
       "title": "Follow us",
       "profiles": [

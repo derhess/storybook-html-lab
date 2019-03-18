@@ -8,6 +8,7 @@ const autoprefixer = require("autoprefixer");
 
 const indexPageContent = require("./../src/components/05-pages/indexMockData.json");
 const aboutPageContent = require("./../src/components/05-pages/aboutMockData.json");
+const contactPageContent = require("./../src/components/05-pages/contactMockData.json");
 
 module.exports = {
   entry: {
@@ -119,6 +120,20 @@ module.exports = {
       filename: "about.html",
       template: "./src/components/05-pages/about.handlebars",
       pageData: aboutPageContent,
+      minify: false && {
+        html5: true,
+        collapseWhitespace: true,
+        caseSensitive: true,
+        removeComments: true,
+        removeEmptyElements: true
+      }
+    }),
+
+    new HtmlWebpackPlugin({
+      title: "My awesome service - Contact Page",
+      filename: "contact.html",
+      template: "./src/components/05-pages/contact.handlebars",
+      pageData: contactPageContent,
       minify: false && {
         html5: true,
         collapseWhitespace: true,
