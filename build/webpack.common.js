@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 
 const indexPageContent = require("./../src/components/05-pages/indexMockData.json");
+const aboutPageContent = require("./../src/components/05-pages/aboutMockData.json");
 
 module.exports = {
   entry: {
@@ -101,8 +102,23 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       title: "My awesome service",
+      filename: "index.html",
       template: "./src/components/05-pages/index.handlebars",
       pageData: indexPageContent,
+      minify: false && {
+        html5: true,
+        collapseWhitespace: true,
+        caseSensitive: true,
+        removeComments: true,
+        removeEmptyElements: true
+      }
+    }),
+
+    new HtmlWebpackPlugin({
+      title: "My awesome service - About Page",
+      filename: "about.html",
+      template: "./src/components/05-pages/about.handlebars",
+      pageData: aboutPageContent,
       minify: false && {
         html5: true,
         collapseWhitespace: true,

@@ -23,20 +23,10 @@
         ]
       }
     },
-    "newsletter": {
-      "title": "Sign-up for the newsletter",
-      "text": "Be one of the first users who joins our awesome service. By registering to the newsletter we'll send you a message as soon as we launch.",
-      "form": {
-        "inputtext": {
-          "placeholder": "your@email.com",
-          "title": "Newsletter Sign-Up"
-        },
-        "button": {
-          "text": "Sign-Up"
-        }
-      }
+    "about": {
+      "title": "My About Page",
+      "text": "Hello this is the about me section"
     },
-
     "socialmedia": {
       "title": "Follow us",
       "profiles": [
